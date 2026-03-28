@@ -1,0 +1,13 @@
+{
+  "name": "openclaw-dashboard",
+  "version": "1.0.0",
+  "description": "Multi-gateway dashboard for OpenClaw - monitors health, sessions, and cron jobs",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"No tests yet\" && exit 0"
+  },
+  "keywords": ["openclaw", "dashboard", "monitoring"],
+  "author": "Yellow House Studio",
+  "license": "MIT"
+}

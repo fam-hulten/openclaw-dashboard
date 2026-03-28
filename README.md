@@ -1,0 +1,56 @@
+# OpenClaw Dashboard
+
+Real-time monitoring dashboard for OpenClaw gateways.
+
+![Dashboard Preview](screenshot.png)
+
+## Features
+
+- **Multi-gateway support** - Monitor up to 10 gateways simultaneously
+- **Real-time health monitoring** - Gateway status, latency, version info
+- **Session tracking** - Active sessions and recent activity
+- **Cron job monitoring** - Next run times and last execution status
+- **Dark theme** - Easy on the eyes terminal-inspired design
+
+## Quick Start
+
+```bash
+# Clone and run
+npm install
+npm start
+
+# Custom port (default: 3080)
+PORT=3000 npm start
+
+# Multiple gateways
+GATEWAYS="Robert:127.0.0.1:34567,Lillian:192.168.1.100:34567" npm start
+```
+
+## Gateway Configuration
+
+Format: `NAME:HOST:PORT:TOKEN`
+
+- `NAME` - Display name for the gateway card
+- `HOST` - Gateway IP or hostname
+- `PORT` - Gateway port (default: 34567)
+- `TOKEN` - Optional auth token
+
+Environment variables:
+- `OPENCLAW_TOKEN` - Default token if not specified in gateway config
+- `DASHBOARD_PORT` - Port for the dashboard itself (default: 3080)
+
+## API Endpoints
+
+- `GET /` - Dashboard HTML
+- `GET /health` - Dashboard health check
+- `GET /api/gateways` - JSON data for all gateways
+- `GET /api/gateways/:name` - JSON data for specific gateway
+
+## Architecture
+
+Single HTML file with embedded CSS/JS polls gateways every 30 seconds.
+No external dependencies - pure Node.js built-ins.
+
+## License
+
+MIT
