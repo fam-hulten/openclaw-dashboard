@@ -74,3 +74,21 @@ start-lillian.bat
 - Dashboard: Works in WSL2, network isolation issue with Windows
 - Alternative: Run directly on Windows with Node.js
 - Lillian's gateway: 192.168.1.194:18789
+
+## Authentication
+
+If the `/health` endpoint requires authentication, set the token:
+
+```bash
+# Via environment variable
+export OPENCLAW_TOKEN=your_token_here
+
+# Or inline in GATEWAYS
+GATEWAYS="Lillian:192.168.1.194:18789:YOUR_TOKEN" node index.js
+```
+
+**Windows PowerShell:**
+```powershell
+$env:OPENCLAW_TOKEN="your_token_here"
+node index.js
+```
