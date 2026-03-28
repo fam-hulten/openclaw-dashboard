@@ -54,3 +54,23 @@ No external dependencies - pure Node.js built-ins.
 ## License
 
 MIT
+
+## Windows Setup
+
+```batch
+# Clone the repo
+git clone https://github.com/fam-hulten/openclaw-dashboard.git
+cd openclaw-dashboard
+
+# Run setup (or just start directly)
+setup.bat
+
+# With Lillian's gateway:
+start-lillian.bat
+```
+
+## Current Status (2026-03-28)
+
+- Dashboard: Works in WSL2, network isolation issue with Windows
+- Alternative: Run directly on Windows with Node.js
+- Lillian's gateway: 192.168.1.194:18789
